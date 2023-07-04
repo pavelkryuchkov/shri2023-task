@@ -43,7 +43,7 @@ module.exports = {
         // ...snip...
         parser: {
           dataUrlCondition: {
-            // maxSize: 10 * 1024, // Inline anything under 10kb
+            maxSize: 200 * 1024, // Inline anything under 10kb
             // maxSize: false, // Inline anything under 10kb
           },
         },
