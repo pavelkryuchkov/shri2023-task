@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   output: {
@@ -15,7 +15,7 @@ module.exports = {
     // new CopyWebpackPlugin({
     //   patterns: [{ from: 'src/assets', to: 'assets' }],
     // }),
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
   ],
   devServer: {
     port: 3030, // you can change the port
@@ -32,6 +32,10 @@ module.exports = {
       {
         test: /\.css$/, // styles files
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.svg$/,
+        use: ['svgo-loader'],
       },
       // {
       //   test: /\.(png|woff|woff2|eot|ttf|svg)$/, // to import images and fonts
