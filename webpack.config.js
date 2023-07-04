@@ -38,12 +38,13 @@ module.exports = {
       //   use: ['svgo-loader'],
       // },
       {
-        test: /\.(svg)$/i,
+        test: /\.(webp|svg)$/i,
         type: 'asset',
         // ...snip...
         parser: {
           dataUrlCondition: {
-            maxSize: 10 * 1024, // Inline anything under 10kb
+            // maxSize: 10 * 1024, // Inline anything under 10kb
+            // maxSize: false, // Inline anything under 10kb
           },
         },
         // ...snip...
