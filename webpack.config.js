@@ -33,9 +33,20 @@ module.exports = {
         test: /\.css$/, // styles files
         use: ['style-loader', 'css-loader'],
       },
+      // {
+      //   test: /\.svg$/,
+      //   use: ['svgo-loader'],
+      // },
       {
-        test: /\.svg$/,
-        use: ['svgo-loader'],
+        test: /\.(svg)$/i,
+        type: 'asset',
+        // ...snip...
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024, // Inline anything under 10kb
+          },
+        },
+        // ...snip...
       },
       // {
       //   test: /\.(png|woff|woff2|eot|ttf|svg)$/, // to import images and fonts
